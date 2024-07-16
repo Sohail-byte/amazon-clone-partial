@@ -1,5 +1,5 @@
 
-import {cart} from '../data/cart.js'
+import {cart, addToCart, updateCartQuantity} from '../data/cart.js'
 import {products} from '../data/products.js' 
 let productsHTML = ''
 
@@ -59,35 +59,7 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML
 
 
 
-function addToCart(productId) {
-  let matchingItem
 
-  cart.forEach((cartItem) =>{
-    if (productId === cartItem.productId){
-      matchingItem = cartItem
-    }
-  })
-
-
-  if(matchingItem){
-    matchingItem.quantity += 1
-  } else {
-    cart.push({
-      productId: productId,
-      quantity: 1
-    })
-  }
-}
-
-
-function updateCartQuantity() {
-  let cartQuantity = 0
-  cart.forEach((item) =>{
-    cartQuantity += item.quantity
-  })
-  
-  document.querySelector('.cart-quantity').innerHTML = cartQuantity
-}
 
 
 
