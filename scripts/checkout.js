@@ -119,3 +119,6 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   })
 
 })
+
+
+document.querySelector('.return-to-home-link').innerHTML = cart.length + ' ' + 'items'
